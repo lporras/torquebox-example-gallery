@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @picture.name
+%p
+  %b Image - versions:
+  %ul
+    %li
+      %p Thumb:
+      = image_tag @picture.image.thumb.url
+    %li
+      %p Portrait:
+      = image_tag @picture.image.portrait.url
+    %li
+      %p Large:
+      = image_tag @picture.image.large.url
+    %li
+      %p Rotated:
+      = image_tag @picture.image.rotated.url
+
+= link_to 'Edit', edit_picture_path(@picture)
+\|
+= link_to 'Back', pictures_path

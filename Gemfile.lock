@@ -50,6 +50,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    columnize (0.3.6)
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -111,6 +112,10 @@ GEM
     rake (0.9.5)
     rdoc (3.12)
       json (~> 1.4)
+    ruby-debug (0.10.4)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.4.0)
+    ruby-debug-base (0.10.4-java)
     sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -184,6 +189,8 @@ DEPENDENCIES
   puma
   rails (= 3.2.1)
   rails-backbone (>= 0.5.3)
+  ruby-debug
+  ruby-debug-base
   sass-rails (~> 3.2.3)
   therubyrhino
   torquebox (= 2.1.2)

@@ -23,6 +23,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'ruby-debug-base'
+  gem 'ruby-debug'
+end
+
 gem 'carrierwave', '0.7.1'
 gem 'mini_magick', '3.4'
 gem 'haml-rails', '>= 0.3.4'
