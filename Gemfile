@@ -23,6 +23,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'carrierwave', '0.7.1'
+gem 'mini_magick', '3.4'
 gem 'haml-rails', '>= 0.3.4'
 gem 'haml'
 gem 'rails-backbone', '>= 0.5.3'
