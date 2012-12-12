@@ -11,11 +11,9 @@
   - @pictures.each do |picture|
     %tr
       %td= picture.name
-      %td= picture.image
+      %td= image_tag picture.image.thumb.url
       %td= link_to 'Show', picture
       %td= link_to 'Edit', edit_picture_path(picture)
       %td= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'New Picture', new_picture_path

@@ -1,1 +1,16 @@
 %h1 Welcome#Index
+
+#uploader
+
+= content_for :javascript do
+  :javascript
+    jQuery(function(){
+      jQuery("#uploader").pluploadQueue({
+        runtimes: 'html5,gears,flash,silverlight,browserplus',
+        url: "#{pictures_path}",
+        multipart_params: {
+          "#{request_forgery_protection_token}": "#{form_authenticity_token}",
+          "#{request.session_options[:key]}": "#{request.session_options[:id]}"
+        }
+      });
+    });

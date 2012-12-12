@@ -31,6 +31,8 @@ end
 gem 'activeadmin', '0.5.1'
 gem 'meta_search', '1.1.3'
 gem 'carrierwave', '0.7.1'
+gem 'flash_cookie_session'
+gem "plupload-rails"
 gem 'mini_magick', '3.4'
 gem 'haml-rails', '>= 0.3.4'
 gem 'haml'

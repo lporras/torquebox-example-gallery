@@ -1,6 +1,8 @@
 class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
+  before_filter :override_params, :only => [:create]
+
   def index
     @pictures = Picture.all
 
@@ -44,8 +46,8 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render json: @picture, status: :created, location: @picture }
+        format.html { render json: @picture, status: :created, location: @picture }
       else
         format.html { render action: "new" }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
@@ -80,4 +82,9 @@ class PicturesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+    def override_params
+      params[:picture] = {:image => params[:file]} if params[:file]
+    end
 end
