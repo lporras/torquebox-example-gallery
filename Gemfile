@@ -1,3 +1,5 @@
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.1'
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
@@ -55,5 +57,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "torquebox", "2.1.2"
-gem 'torquebox-rake-support', '2.1.2'
+#gem "torquebox", "2.2.0"
+#gem 'torquebox-rake-support', '2.2.0'
+#gem 'torquebox-server', '2.2.0'
