@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+#rvm use ruby-1.9.2-p290@invoice-tracker
+
+ruby_version="jruby-1.7.1"
+gemset_name="torquebox"
+
+ok="\033[10;32m"
+warn="\033[1;31m"
+reset="\033[0m"
+
+if rvm list strings | grep -q "${ruby_version}" ; then
+
+  # Load or create the specified environment
+  if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+    && -s "${rvm_path:-$HOME/.rvm}/environments/${ruby_version}@${gemset_name}" ]] ; then
+    \. "${rvm_path:-$HOME/.rvm}/environments/${ruby_version}@${gemset_name}"
+    echo -e "${ok}Using the ${gemset_name} gemset${reset}"
+    #export TORQUEBOX_HOME="${rvm_path:-$HOME/.rvm}/environments/${ruby_version}@${gemset_name}/gems/torquebox-server-2.2.0-java"
+    #export JBOSS_HOME="${rvm_path:-$HOME/.rvm}/environments/${ruby_version}@${gemset_name}/gems/torquebox-server-2.2.0-java/jboss"
+    #export JRUBY_HOME="${rvm_path:-$HOME/.rvm}/rubies/${ruby_version}"
+    #torquebox env
+  else
+    echo -e "${ok}The ${gemset_name} gemset does not exist, creating ${ruby_version}@${gemset_name} gemset${reset}"
+    rvm --create "${ruby_version}@${gemset_name}"
+  fi
+
+else
+
+  # Notify the user to install the desired interpreter before proceeding.
+  echo -e "${warn}${ruby_version} was not found, please run 'rvm install ${ruby_version}' and then cd back into the project directory.${reset}"
+
+fi
