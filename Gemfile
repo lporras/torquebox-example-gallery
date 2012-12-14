@@ -9,7 +9,8 @@ gem 'puma'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'jdbc-postgres'
+gem 'activerecord-jdbcpostgresql-adapter'
 
 gem 'jruby-openssl', '0.7.7'
 
@@ -28,6 +29,7 @@ end
 group :development, :test do
   gem 'ruby-debug-base'
   gem 'ruby-debug'
+  gem 'activerecord-jdbcsqlite3-adapter'
 end
 
 gem 'activeadmin', '0.5.1'
