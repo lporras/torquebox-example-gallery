@@ -5,12 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 
 gem 'puma'
+gem 'mizuno'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'jdbc-postgres'
-gem 'activerecord-jdbcpostgresql-adapter'
+#gem 'jdbc-postgres'
+#gem 'activerecord-jdbcpostgresql-adapter'
 
 gem 'jruby-openssl', '0.7.7'
 

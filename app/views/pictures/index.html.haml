@@ -1,19 +1,9 @@
-%h1 Listing pictures
+%h1 Gallery
 
-%table
-  %tr
-    %th Name
-    %th Image
-    %th
-    %th
-    %th
-
-  - @pictures.each do |picture|
-    %tr
-      %td= picture.name
-      %td= image_tag picture.image.thumb.url
-      %td= link_to 'Show', picture
-      %td= link_to 'Edit', edit_picture_path(picture)
-      %td= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
+#myCarousel.carousel.slide
+  / Carousel items
+  .carousel-inner
+    = render :partial => "item", :collection => @pictures, :as => :picture
+  / Carousel nav
+  %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
+  %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;

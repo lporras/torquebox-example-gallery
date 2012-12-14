@@ -37,3 +37,7 @@
 //= require plupload.browserplus
 
 //= require_tree .
+
+$(document).ready(function (){
+  $('.carousel .item:first').addClass("active");
+});
